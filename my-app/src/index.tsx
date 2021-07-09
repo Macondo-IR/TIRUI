@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserHistory } from 'history';
-
 import 'semantic-ui-css/semantic.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollToTop from './app/layout/ScrollToTop';
 
 export const history=createBrowserHistory();
 
 ReactDOM.render(
-  <React.StrictMode>
+<Router history={history}>
+  <ScrollToTop> 
     <App />
-  </React.StrictMode>,
+  </ScrollToTop>
+  </Router>
+,
   document.getElementById('root')
 );
 
